@@ -15,7 +15,7 @@ Airflow를 Google Kubernetes Engine 위에서 실행하고, 데이터 프로세�
 
 ### Cluster Settings
 
-GCP 클러스터에 대한 사용자 설정은 [common.sh](/sbin/common.sh)을 참고합니다.
+GCP 클러스터에 대한 사용자 설정은 [sbin](/sbin/)을 참고하세요.
 
 > **Warning**
 > 
@@ -25,7 +25,7 @@ GCP 클러스터에 대한 사용자 설정은 [common.sh](/sbin/common.sh)을 �
 
 ### Airflow Settings
 
-Airflow에 대한 사용자 설정은 [override-values.yaml](/config/override-values.yaml)을 참고합니다.
+Airflow에 대한 사용자 설정은 [config](/config)를 참고하세요.
 
 ## How to deploy
 
