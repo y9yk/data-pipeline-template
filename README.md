@@ -18,6 +18,7 @@ Airflow를 Google Kubernetes Engine 위에서 실행하고, 데이터 프로세�
 GCP 클러스터에 대한 사용자 설정은 [common.sh](/sbin/common.sh)을 참고합니다.
 
 > **Warning**
+> 
 > Google Kubernetes Engine에 대한 리소스 접근제어가 가능한 서비스 계정이 생성되어 있고, 이를 이용한다고 가정합니다.
 > 서비스 계정의 위치는 `credential/service-account.json`입니다.
 > Google Cloud Platform에서의 서비스 계정의 생성 및 삭제는 [서비스 계정 생성](https://cloud.google.com/iam/docs/keys-create-delete)을 참고하세요.
