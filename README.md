@@ -1,6 +1,6 @@
 # data-pipeline-template
 
-Airflow를 활용해서 손쉽게 데이터 프로세싱 코드 및 스케줄링을 할 수 있는 코드 템플릿입니다.
+Airflow를 Google Kubernetes Engine 위에서 실행하고, 데이터 프로세싱과 관련한 Dag 코드를 생성 및 운영할 수 있는 코드 템플릿입니다.
 
 ## Prerequisite
 
