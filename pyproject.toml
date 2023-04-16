@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "data-pipeline-template"
+authors = ["y9yk <andrew.yk82@gmail.com>"]
+description = ""
+readme = "README.md"
+version = "0.1.0"
+
+[tool.poetry.dependencies]
+apache-airflow = "2.2.1"
+apache-airflow-providers-cncf-kubernetes = "3.1.2"
+pendulum = "^2.1.2"
+python = "3.8.15"
+
+[tool.poetry.group.dev.dependencies]
+black = {version = "^22.12.0", allow-prereleases = true}
+pylint = "^2.15.8"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
