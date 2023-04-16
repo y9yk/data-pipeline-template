@@ -2,32 +2,48 @@
 
 Airflow를 활용해서 손쉽게 데이터 프로세싱 코드 및 스케줄링을 할 수 있는 코드 템플릿입니다.
 
+## Prerequisite
+
+아래 프로그램이 실행되는 것을 전제하고 있습니다.
+
+만약 설치되어 있지 않다면, 아래 링크를 토대로 설치해주세요.
+
+- [docker](https://docs.docker.com/engine/install)
+- [gcloud CLI](https://cloud.google.com/sdk/docs/install?hl=ko)
+
+## Configuration
+
+### Cluster Settings
+
+GCP 클러스터에 대한 사용자 설정은 [common.sh](/sbin/common.sh)을 참고합니다.
+
+> **Warning**
+> Google Kubernetes Engine에 대한 리소스 접근제어가 가능한 서비스 계정이 생성되어 있고, 이를 이용한다고 가정합니다.
+> 서비스 계정의 위치는 `credential/service-account.json`입니다.
+> Google Cloud Platform에서의 서비스 계정의 생성 및 삭제는 [서비스 계정 생성](https://cloud.google.com/iam/docs/keys-create-delete)을 참고하세요.
+
+### Airflow Settings
+
+Airflow에 대한 사용자 설정은 [override-values.yaml](/config/override-values.yaml)을 참고합니다.
+
 ## How to deploy
 
 ### Dockerization
 
-아래의 스크립트를 이용해서 Airflow가 사용할 수 있는 Docker 이미지를 빌드할 수 있습니다.
+아래의 스크립트를 이용해서 Airflow가 사용할 수 있는 Docker 이미지를 빌드 및 배포할 수 있습니다.
 
 ```bash
-$cd deploy
-$./build-docker.sh
+$ ./sbin/build-docker.sh
 ```
-
-### Airflow Settings
-
-Airflow에 대한 사용자 설정은 `./deploy/override-values.yaml`을 참고합니다.
 
 ### Deploy Airflow Chart
 
 아래의 스크립트를 이용해서 Airflow를 Kubernetes에 배포할 수 있습니다.
 
 ```bash
-$cd deploy
-$./install-chart.sh
-$./install-ingress.sh
+$ ./sbin/install-chart.sh
+$ ./sbin/install-ingress.sh
 ```
-
-Chart가 참고하는 values.yaml 파일은 `./deploy/override-values.yaml`을 참고하면 됩니다.
 
 ### Undeploy Airflow Chart
 
@@ -37,7 +53,3 @@ Chart가 참고하는 values.yaml 파일은 `./deploy/override-values.yaml`을 �
 $cd deploy
 $./uninstall-chart.sh
 ```
-
-## Dags
-
-Airflow가 구동시키는 dag 파일의 위치는 `./dags`에 있습니다. (gitsync를 사용해서 동기화되고 있습니다.)
