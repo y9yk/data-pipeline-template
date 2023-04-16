@@ -51,5 +51,5 @@ $ ./sbin/install-ingress.sh
 아래의 스크립트를 이용해서 Airflow를 Kubernetes에서 제거할 수 있습니다.
 
 ```bash
-$ ./sbinuninstall-chart.sh
+$ ./sbin/uninstall-chart.sh
 ```
