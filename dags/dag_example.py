@@ -57,7 +57,7 @@ start = DummyOperator(task_id="start", dag=dag)
 end = DummyOperator(task_id="end", dag=dag)
 
 # Task Definition
-analysis = KubernetesPodOperator(
+exmaple = KubernetesPodOperator(
     namespace="default",
     image=IMAGE,
     cmds=["/app/sbin/run.sh"],
@@ -80,5 +80,5 @@ branch = BranchPythonOperator(
 )
 
 # Workflow
-start >> analysis >> branch
+start >> example >> branch
 branch >> [end]
