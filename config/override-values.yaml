@@ -1,77 +1,77 @@
 ## Airflow Docker Repository Configuration
-# defaultAirflowRepository: 
-# defaultAirflowTag: 
+defaultAirflowRepository: gcr.io/project_id/project_name
+defaultAirflowTag: latest
 
 ## Image Pulling Policy
-# images:
-#   airflow:
-#     pullPolicy: Always
+images:
+  airflow:
+    pullPolicy: Always
 
 ## Default Ingress Configuration
-# ingress:
-#   web:
-#     enabled: true
-#     annotations:
-#       kubernetes.io/ingress.class: nginx
+ingress:
+  web:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
 
 ## Webserver Secret Key
-# webserverSecretKey: 
-# weserverSecretKeySecretName: webserver-secret
+webserverSecretKey: this-is-a-secret-key
+weserverSecretKeySecretName: webserver-secret
 
 ## Airflow Executor
-# executor: KubernetesExecutor
+executor: KubernetesExecutor
 
 ## Airflow Configuration
-# worker:
-#   persistence:
-#     enabled: false
-# webserver:
-#   # probe setting
-#   livenessProbe:
-#     initialDelaySeconds: 30
-#     timeoutSeconds: 30
-#     failureThreshold: 10
-#     periodSeconds: 3
-#   readinessProbe:
-#     initialDelaySeconds: 30
-#     timeoutSeconds: 30
-#     failureThreshold: 10
-#     periodSeconds: 3
-#   # authentication configuration
-#   defaultUser:
-#     username:
-#     password:
-#   # webserver configuration
-#   webserverConfig: |
-#     CSRF_ENABLED = True # use csrf security option
-# # persistence for logging
-# logs:
-#   persistence:
-#     enabled: false
-# # flower
-# flower:
-#   enabled: false
-# # redis
-# redis:
-#   enabled: false
-# #
-# config:
-#   # use basic_auth
-#   api:
-#     auth_backend: airflow.api.auth.backend.basic_auth
-#   # not load example dags
-#   core:
-#     load_examples: "False"
-#   # connect to GCS
-#   logging:
-#     remote_logging: "True"
-#     remote_base_log_folder:
-#     remote_log_conn_id: AIRFLOW_CONN_GCP
+worker:
+  persistence:
+    enabled: false
+webserver:
+  # probe setting
+  livenessProbe:
+    initialDelaySeconds: 30
+    timeoutSeconds: 30
+    failureThreshold: 10
+    periodSeconds: 3
+  readinessProbe:
+    initialDelaySeconds: 30
+    timeoutSeconds: 30
+    failureThreshold: 10
+    periodSeconds: 3
+  # authentication configuration
+  defaultUser:
+    username:
+    password:
+  # webserver configuration
+  webserverConfig: |
+    CSRF_ENABLED = True # use csrf security option
+# persistence for logging
+logs:
+  persistence:
+    enabled: false
+# flower
+flower:
+  enabled: false
+# redis
+redis:
+  enabled: false
+#
+config:
+  # use basic_auth
+  api:
+    auth_backend: airflow.api.auth.backend.basic_auth
+  # not load example dags
+  core:
+    load_examples: "False"
+  # connect to GCS
+  logging:
+    remote_logging: "True"
+    remote_base_log_folder: gs://log_bucket_address
+    remote_log_conn_id: AIRFLOW_CONN_GCP
 
 ## Dags configuration
-# dags:
-#   gitSync:
-#     enabled: true
-#     repo:
-#     branch: develop
-#     subPath: dags
+dags:
+  gitSync:
+    enabled: true
+    repo: https://credential@github.com/username/repository.git
+    branch: develop
+    subPath: dags
