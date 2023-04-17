@@ -16,7 +16,7 @@ Airflow를 Google Kubernetes Engine 위에서 실행하고, 데이터 프로세�
 
 ### Cluster Settings
 
-GCP 클러스터 [사용자 설정](/sbin)을 참고하세요.
+[GCP 클러스터 사용자 설정](/sbin)을 참고하세요.
 
 > **Warning**
 > 
@@ -26,7 +26,7 @@ GCP 클러스터 [사용자 설정](/sbin)을 참고하세요.
 
 ### Airflow Settings
 
-Airflow [사용자 설정](/config)을 참고하세요.
+[Airflow 사용자 설정](/config)을 참고하세요.
 
 ## How to deploy
 
