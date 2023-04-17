@@ -8,14 +8,15 @@ Airflow를 Google Kubernetes Engine 위에서 실행하고, 데이터 프로세�
 
 만약 설치되어 있지 않다면, 아래 링크를 토대로 설치해주세요.
 
-- [docker](https://docs.docker.com/engine/install)
-- [gcloud CLI](https://cloud.google.com/sdk/docs/install?hl=ko)
+- [Docker](https://docs.docker.com/engine/install)
+- [Helm](https://helm.sh/docs/intro/install)
+- [gcloud CLI](https://cloud.google.com/sdk/docs/install)
 
 ## Configuration
 
 ### Cluster Settings
 
-GCP 클러스터에 대한 사용자 설정은 [sbin](/sbin/)을 참고하세요.
+GCP 클러스터에 대한 사용자 설정은 [sbin](/sbin)을 참고하세요.
 
 > **Warning**
 > 
