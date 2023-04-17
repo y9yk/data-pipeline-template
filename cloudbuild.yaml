@@ -1,0 +1,12 @@
+steps:
+
+# build and publish
+- id: "build and publish"
+  name: "gcr.io/cloud-builders/docker"
+  entrypoint: "bash"
+  args:
+    - "-c"
+    - |
+      bash sbin/build-docker.sh
+
+timeout: 3600s
