@@ -19,5 +19,5 @@ kubectl config use-context ${CLUSTER}
 helm repo add apache-airflow https://airflow.apache.org && helm repo update
 helm upgrade \
     --install \
-    -f ${PROJECT_ROOT}/deploy/override-values.yaml \
+    -f ${PROJECT_ROOT}/config/override-values.yaml \
     ${RELEASE_NAME} apache-airflow/airflow
