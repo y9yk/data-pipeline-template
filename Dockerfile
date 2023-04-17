@@ -29,6 +29,4 @@ RUN gcloud auth activate-service-account \
 USER ${AIRFLOW_UID}
 
 # install dependencies
-RUN pip install \
-    -r ${AIRFLOW_USER_HOME}/requirements.txt \
-    --use-deprecated=legacy-resolver
+RUN pip install -r ${AIRFLOW_USER_HOME}/requirements.txt
