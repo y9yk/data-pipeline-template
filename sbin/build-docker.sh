@@ -17,13 +17,11 @@ if [[ -z "${PROJECT_NAME}" ]]; then
     exit 1
 fi
 
-# authenticate
-gcloud auth configure-docker
-
 # build and push
 IMAGE=gcr.io/${GCP_PROJECT}/${PROJECT_NAME}:${PROJECT_VERSION}
 
-docker build -f Dockerfile \
+docker build -f ${PROJECT_ROOT}/Dockerfile \
     -t ${IMAGE} \
+    --build-arg GCP_PROJECT=${GCP_PROJECT} \
     .
 docker push ${IMAGE}
