@@ -2,9 +2,10 @@ FROM apache/airflow:2.2.1-python3.8
 
 LABEL maintainer="Yong Ki Lee <andrew.yk82@gmail.com>"
 
-ARG GCP_PROJECT=gcp-project
+ARG ARG_GCP_PROJECT=gcp-project
 
 # set environment
+ENV GCP_PROJECT=${ARG_GCP_PROJECT}
 ENV AIRFLOW_USER_HOME=/opt/airflow
 ENV SERVICE_ACCOUNT_FILEPATH=credential/service-account.json
 ENV GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/${SERVICE_ACCOUNT_FILEPATH}
