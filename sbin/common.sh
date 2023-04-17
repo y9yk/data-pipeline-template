@@ -3,7 +3,7 @@
 # env
 CURR_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PROJECT_ROOT="$(dirname "${CURR_DIR}")"
-CONFIG_FILE_PATH=${PROJECT_ROOT}/config/cluster.env
+CONFIG_FILE_PATH=${PROJECT_ROOT}/config/cluster.env.example
 
 # vars
 source ${CONFIG_FILE_PATH}
